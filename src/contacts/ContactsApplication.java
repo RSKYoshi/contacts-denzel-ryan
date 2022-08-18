@@ -6,7 +6,11 @@ public class ContactsApplication {
 
         boolean keepSearching = true;
         do {
+<<<<<<< HEAD
 //            System.out.println("Please Enter an option (1, 2, 3, 4 or 5):");
+=======
+
+>>>>>>> 0257c1e45781e10b0484de7d7be5ed81b93f5299
             Input input = new Input();
             System.out.println("1 - View contacts.");
             System.out.println("2 - Add a new contact");
@@ -21,21 +25,16 @@ public class ContactsApplication {
                 case 2 -> addContacts();
                 case 3 -> searchContacts();
                 case 4 -> deleteContact();
-                case 5 -> exit();
+              case 5 -> {
+                  System.out.println("Goodbye");
+                    return;
+                }
             }
-            System.out.println("Are you sure you want to leave [y/n]");
-            String letsContinue = input.getString();
-            if (letsContinue.contains("y") || letsContinue.contains("Y")) {
-                System.out.println("Goodbye!");
-                keepSearching = false;
-                break;
-            }
+
         } while (keepSearching);
     }
 
-    private static void exit() {
-        System.out.println("5 works exits ");
-    }
+
 
     private static void deleteContact() {
         System.out.println("4 works");
