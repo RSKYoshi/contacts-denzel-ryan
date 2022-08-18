@@ -3,6 +3,7 @@ package contacts;
 public class ContactsApplication {
     public static void main(String[] args) {
 
+
         boolean keepSearching = true;
         do {
             System.out.println("Please Enter an option (1, 2, 3, 4 or 5):");
@@ -51,6 +52,7 @@ public class ContactsApplication {
 
     private static void showContacts() {
         System.out.println("1 works");
+
     }
 }
 
