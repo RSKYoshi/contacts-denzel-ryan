@@ -2,6 +2,7 @@ package contacts;
 
 public class ContactsApplication {
     public static void main(String[] args) {
+        System.out.println("string");
         System.out.println("Please Enter an option (1, 2, 3, 4 or 5):");
 //        Input input = new Input();
         System.out.println("1 - View contacts.");
