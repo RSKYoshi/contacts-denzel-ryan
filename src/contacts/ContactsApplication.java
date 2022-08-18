@@ -3,6 +3,7 @@ package contacts;
 public class ContactsApplication {
     public static void main(String[] args) {
 
+
         boolean keepSearching = true;
         do {
 
@@ -46,6 +47,7 @@ public class ContactsApplication {
 
     private static void showContacts() {
         System.out.println("1 works");
+
     }
 }
 
