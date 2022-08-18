@@ -6,7 +6,7 @@ public class ContactsApplication {
 
         boolean keepSearching = true;
         do {
-            System.out.println("Please Enter an option (1, 2, 3, 4 or 5):");
+//            System.out.println("Please Enter an option (1, 2, 3, 4 or 5):");
             Input input = new Input();
             System.out.println("1 - View contacts.");
             System.out.println("2 - Add a new contact");
