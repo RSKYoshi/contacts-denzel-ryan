@@ -12,7 +12,7 @@ public class Contact_Item {
 
     public static Contact_Item createFromString(String contactString) {
         String [] parts = contactString.split("\\|");
-        return new Contact_Item(parts[0].trim(), parts[1].trim());
+        return new Contact_Item(parts[0].trim(), parts[0].trim());
     }
 
     @Override
