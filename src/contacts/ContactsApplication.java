@@ -1,9 +1,14 @@
 package contacts;
 
 public class ContactsApplication {
-
     public static final String ANSI_BLUE = "\u001B[34m"; //colors for the console
     public static final String ANSI_PURPLE = "\u001B[35m"; //colors for the console
+
+    private static ContactList contactList = ContactListGateway.readFromFile();
+//    private static ContactList contactList = ContactListGateway.writeItemStringsToFilePath();
+
+
+
 
 
     public static void main(String[] args) {
@@ -49,6 +54,8 @@ public class ContactsApplication {
         Contact_Item ryan = new Contact_Item("Ryan", "2101234567");; // creating people for the array list
         contactList.addContactItem(tom); //adding those people to the array list
         contactList.addContactItem(ryan);//adding those people to the array list
+        ContactListGateway.writeToFile(contactList);
+
 
 
 
@@ -71,6 +78,10 @@ public class ContactsApplication {
                     Contact_Item newContact = new Contact_Item(newPersonName, newPersonNumber ); //making new  contact item to pass the  variables up there ^^^
 
                     contactList.addContactItem(newContact); //setting the array list to add the new contact item
+                    ContactListGateway.writeToFile(contactList);
+//                    ContactListGateway.write(filepath, contactList);
+//                    ContactListGateway.writeItemStringsToFilePath(,contactList);
+
                     System.out.println(art2); // print out new person created
                 }
 
@@ -82,19 +93,22 @@ public class ContactsApplication {
                 case 4 -> {String nameToDelete = input.getString("What contact would you like to delete? ");//captures user input ^ using input.getString^ then set the nameToDelete
 
                 contactList.removeContactItem(nameToDelete); // calling array contactList then accessing the method .removeContactItem and passing ^nameToDelete as the argument
+                ContactListGateway.writeToFile(contactList);
+
 
                     System.out.println(nameToDelete +"" +art3);} /// printing out terminated
 
                 case 5 -> {
-                  System.out.println(art4);
+                    System.out.println(art4);
                     return; // breaks out the loop
-
                 }
                 case 6 -> menuDisply();
 
             }
 
         } while (keepSearching);/// endless loop because the boolean keepSearching is set to true;
+        //save to file here contactList
+
 
 //        ContactListGateway.writeToFile(contactList);
 //        ContactList list = ContactListGateway.readFromFile();
