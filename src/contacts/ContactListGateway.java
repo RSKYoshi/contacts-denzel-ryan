@@ -16,7 +16,7 @@ public class ContactListGateway {
             return;
         }
 
-        // 2. make a temporary list of strings that are the grocery items and write those to the file
+        // 2. make a temporary list of strings that are the contact items and write those to the file
         List<String> itemStrings = contactList.toStringList();
 
         // 3. use Files.write to send the data to the file
@@ -24,7 +24,7 @@ public class ContactListGateway {
     }
 
 
-    private static void writeItemStringsToFilePath(Path filePath, List<String> itemStrings) {
+    public static void writeItemStringsToFilePath(Path filePath, List<String> itemStrings) {
         try {
             Files.write(filePath, itemStrings);
         } catch (IOException e) {
