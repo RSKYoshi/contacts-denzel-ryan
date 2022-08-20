@@ -1,11 +1,15 @@
 package contacts;
 
+
+import java.awt.*;
+
 public class ContactsApplication {
     public static final String ANSI_BLUE = "\u001B[34m"; //colors for the console
     public static final String ANSI_PURPLE = "\u001B[35m"; //colors for the console
 
     private static ContactList contactList = ContactListGateway.readFromFile();
 //    private static ContactList contactList = ContactListGateway.writeItemStringsToFilePath();
+
 
 
 
@@ -67,10 +71,12 @@ public class ContactsApplication {
         do {
             Input input = new Input();
 
-            int choice = input.getInt("Please enter a Selection");
+            int choice = input.getInt("Please enter a Selection: ");
             switch (choice) {
-                case 1 -> contactList.printItems(); // print the current array list that we set up^^^^ using the printItems() method
-
+                case 1 -> {
+                    contactList.printItems(); // print the current array list that we set up^^^^ using the printItems() method
+//                    Toolkit.getDefaultToolkit().beep();
+                }
                 case 2->
                 { String newPersonName = input.getString("Enter contact name: ");  // getting user string input
                     String newPersonNumber = String.valueOf(input.getInt("Enter contact number: "));  // getting user input.getInt to get the integer that the user puts in String.valueOf method converts that  number to a string
@@ -78,7 +84,12 @@ public class ContactsApplication {
                     Contact_Item newContact = new Contact_Item(newPersonName, newPersonNumber ); //making new  contact item to pass the  variables up there ^^^
 
                     contactList.addContactItem(newContact); //setting the array list to add the new contact item
+//                    ContactListGateway.writeToFile(contactList);
                     ContactListGateway.writeToFile(contactList);
+
+
+
+
 //                    ContactListGateway.write(filepath, contactList);
 //                    ContactListGateway.writeItemStringsToFilePath(,contactList);
 
@@ -99,6 +110,7 @@ public class ContactsApplication {
                     System.out.println(nameToDelete +"" +art3);} /// printing out terminated
 
                 case 5 -> {
+                    ContactListGateway.writeToFile(contactList);
                     System.out.println(art4);
                     return; // breaks out the loop
                 }
@@ -129,6 +141,7 @@ public class ContactsApplication {
         System.out.println("5 -  Exit");
         System.out.println("6 -  Reshow Menu");
     }
+
 
 
 
