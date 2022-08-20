@@ -22,9 +22,9 @@ public class ContactList {
         System.out.println("Contact List  : Phone number");
         System.out.print(" ____ ____ ____ ____ ____ ____ \n"
                );
+
         for(Contact_Item item : contactItems) {
             System.out.println("\t" + item);
-
         }
     }
 
@@ -34,10 +34,10 @@ public class ContactList {
         //remove method here
 
     public void removeContactItem(String contactName) {
-        // 1. find the index of the grocery item with itemName
+        // 1. find the index of the contact item with itemName
         int index = getIndexOfItemByName(contactName);
 
-        // 2. remove the item in the grocery list at that index
+        // 2. remove the item in the contact list at that index
         if(index > -1) {
             contactItems.remove(index);
         }
