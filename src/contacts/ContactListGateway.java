@@ -68,12 +68,12 @@ public class ContactListGateway {
             Path folder = Paths.get("phoneBook_list");
             Path file = Paths.get("phoneBook_list", "digits.txt");
             if(Files.exists(folder)) {
-                System.out.println("Hey the folder already exists!");
+//                System.out.println("Hey the folder already exists!");
             } else {
                 Files.createDirectories(folder);
             }
             if(Files.exists(file)) {
-                System.out.println("Hey the file already exists!");
+//                System.out.println("Hey the file already exists!");
             } else {
                 Files.createFile(file);
             }
