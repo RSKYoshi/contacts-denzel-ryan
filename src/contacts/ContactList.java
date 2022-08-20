@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class ContactList {
     private ArrayList<Contact_Item> contactItems;
 
@@ -13,17 +12,25 @@ public class ContactList {
     }
 
 
+
     ///add method here
     public void addContactItem(Contact_Item item) {
         contactItems.add(item);
     }
 
     public void printItems() {
-        System.out.println("Contact List");
+        System.out.println("Contact List  : Phone number");
+        System.out.print(" ____ ____ ____ ____ ____ ____ \n"
+               );
         for(Contact_Item item : contactItems) {
             System.out.println("\t" + item);
+
         }
     }
+
+
+
+
         //remove method here
 
     public void removeContactItem(String contactName) {
@@ -70,8 +77,12 @@ public class ContactList {
         return null;
     }
 
+
+
+
     public List<String> toStringList() {
         List<String> itemStrings = new ArrayList<>();
+
         for(Contact_Item item : contactItems) {
             itemStrings.add(item.toString());
         }

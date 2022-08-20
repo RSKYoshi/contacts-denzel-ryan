@@ -2,16 +2,17 @@ package contacts;
 
 public class Contact_Item {
     private String name;
-    private int phoneNumbers;
+    private String phoneNumbers;
 
-    public Contact_Item(String name, int phoneNumbers) {
+
+    public Contact_Item(String name, String phoneNumbers) {
         this.name = name;
         this.phoneNumbers = phoneNumbers;
     }
 
-    public static Contact_Item createFromString(String itemString) {
-        String [] parts = itemString.split(":");
-        return new Contact_Item(parts[0].trim(), Integer.parseInt(parts[1].trim()));
+    public static Contact_Item createFromString(String contactString) {
+        String [] parts = contactString.split("\\|");
+        return new Contact_Item(parts[0].trim(), parts[1].trim());
     }
 
     @Override
@@ -23,15 +24,16 @@ public class Contact_Item {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getDigits() {
+//        return phoneNumbers;
+//    }
+//
+//    public void setDigits(String phoneNumbers) {
+//        this.phoneNumbers = phoneNumbers;
+//    }
 
-    public int getDigits() {
-        return phoneNumbers;
-    }
-
-    public void setDigits(int phoneNumbers) {
-        this.phoneNumbers = phoneNumbers;
-    }
 }
