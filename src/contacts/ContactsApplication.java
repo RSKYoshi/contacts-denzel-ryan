@@ -1,25 +1,14 @@
 package contacts;
-
-
 import java.awt.*;
 
 public class ContactsApplication {
     public static final String ANSI_BLUE = "\u001B[34m"; //colors for the console
     public static final String ANSI_PURPLE = "\u001B[35m"; //colors for the console
-
     public static final String ANSI_GREEN = "\u001B[32m";
-
-
     private static ContactList contactList = ContactListGateway.readFromFile();
 //    private static ContactList contactList = ContactListGateway.writeItemStringsToFilePath();
 
-
-
-
-
-
     public static void main(String[] args) {
-
 
         String art = ANSI_PURPLE+ """
                 \\   \\  /  \\  /   / |   ____||  |      /      | /  __  \\  |   \\/   | |   ____|
@@ -54,59 +43,49 @@ public class ContactsApplication {
                  \\______|  \\______/   \\______/  |_______/ |______/      |__|     |_______|""";
 
         String art5 = ANSI_GREEN+ """
-                
-        ───────────────────────────────
-        ───────────────████─███────────
-        ──────────────██▒▒▒█▒▒▒█───────
-        ─────────────██▒────────█──────
-        ─────────██████──██─██──█──────
-        ────────██████───██─██──█──────
-        ────────██▒▒▒█──────────███────
-        ────────██▒▒▒▒▒▒───▒──██████───
-        ───────██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒███─
-        ──────██▒▒▒▒─────▒▒▒▒▒▒▒▒▒▒▒▒█─
-        ──────██▒▒▒───────▒▒▒▒▒▒▒█▒█▒██
-        ───────██▒▒───────▒▒▒▒▒▒▒▒▒▒▒▒█
-        ────────██▒▒─────█▒▒▒▒▒▒▒▒▒▒▒▒█
-        ────────███▒▒───██▒▒▒▒▒▒▒▒▒▒▒▒█
-        ─────────███▒▒───█▒▒▒▒▒▒▒▒▒▒▒█─
-        ────────██▀█▒▒────█▒▒▒▒▒▒▒▒██──
-        ──────██▀██▒▒▒────█████████────
-        ────██▀███▒▒▒▒────█▒▒██────────
-        █████████▒▒▒▒▒█───██──██───────
-        █▒▒▒▒▒▒█▒▒▒▒▒█────████▒▒█──────
-        █▒▒▒▒▒▒█▒▒▒▒▒▒█───███▒▒▒█──────
-        █▒▒▒▒▒▒█▒▒▒▒▒█────█▒▒▒▒▒█──────
-        ██▒▒▒▒▒█▒▒▒▒▒▒█───█▒▒▒███──────
-        ─██▒▒▒▒███████───██████────────
-        ──██▒▒▒▒▒██─────██─────────────
-        ───██▒▒▒██─────██──────────────
-        ────█████─────███──────────────
-        ────█████▄───█████▄────────────
-        ──▄█▓▓▓▓▓█▄─█▓▓▓▓▓█▄───────────
-        ──█▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓█──────────
-        ──█▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓█──────────
-        ──▀████████▀▀███████▀──────────
-        
+                       
+                       ████ ███
+                      ██▒▒▒█▒▒▒█
+                     ██▒        █
+                 ██████  ██ ██  █
+                ██████   ██ ██  █
+                ██▒▒▒█          ███
+                ██▒▒▒▒▒▒   ▒  ██████
+               ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒███
+              ██▒▒▒▒     ▒▒▒▒▒▒▒▒▒▒▒▒█
+              ██▒▒▒       ▒▒▒▒▒▒▒█▒█▒██
+               ██▒▒       ▒▒▒▒▒▒▒▒▒▒▒▒█
+                ██▒▒     █▒▒▒▒▒▒▒▒▒▒▒▒█
+                ███▒▒   ██▒▒▒▒▒▒▒▒▒▒▒▒█
+                 ███▒▒   █▒▒▒▒▒▒▒▒▒▒▒█
+                ██▀█▒▒    █▒▒▒▒▒▒▒▒██
+              ██▀██▒▒▒    █████████
+            ██▀███▒▒▒▒    █▒▒██
+        █████████▒▒▒▒▒█   ██  ██
+        █▒▒▒▒▒▒█▒▒▒▒▒█    ████▒▒█
+        █▒▒▒▒▒▒█▒▒▒▒▒▒█   ███▒▒▒█
+        █▒▒▒▒▒▒█▒▒▒▒▒█    █▒▒▒▒▒█
+        ██▒▒▒▒▒█▒▒▒▒▒▒█   █▒▒▒███
+         ██▒▒▒▒███████   ██████
+          ██▒▒▒▒▒██     ██
+           ██▒▒▒██     ██
+            █████     ███
+            █████▄   █████▄
+          ▄█▓▓▓▓▓█▄ █▓▓▓▓▓█
+          █▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓█
+          █▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓█
+          ▀████████▀▀███████▀
         """;
-
         /// default  generic people on the list
-
         ContactList contactList = new ContactList(); // array list
 //        Contact_Item tom = new Contact_Item("Tom", "2108879341"); // creating people for the array list
 //        Contact_Item ryan = new Contact_Item("Ryan", "2101234567");; // creating people for the array list
 //        contactList.addContactItem(tom); //adding those people to the array list
 //        contactList.addContactItem(ryan);//adding those people to the array list
 //        ContactListGateway.writeToFile(contactList);
-
-
-
-
         boolean keepSearching = true;
         System.out.println(art); // welcome art
         menuDisply();
-
-
         do {
             Input input = new Input();
             contactList = contactList;
@@ -123,23 +102,14 @@ public class ContactsApplication {
                     Toolkit.getDefaultToolkit().beep();
                     String newPersonName = input.getString("Enter contact name: ");  // getting user string input
                     String newPersonNumber = String.valueOf(input.getInt("Enter contact number: "));  // getting user input.getInt to get the integer that the user puts in String.valueOf method converts that  number to a string
-
                     Contact_Item newContact = new Contact_Item(newPersonName, newPersonNumber ); //making new  contact item to pass the  variables up there ^^^
-
                     contactList.addContactItem(newContact); //setting the array list to add the new contact item
 //                    ContactListGateway.writeToFile(contactList);
 //                    ContactListGateway.writeToFile(contactList1);
-
-
-
-
 //                    ContactListGateway.write(filepath, contactList);
 //                    ContactListGateway.writeItemStringsToFilePath(,contactList);
-
                     System.out.println(art2); // print out new person created
                 }
-
-
                 case 3 -> {Toolkit.getDefaultToolkit().beep();
                     String existingName = input.getString("Who would you like to search?: "); //  setting  variable  existingName  that is getting user string input using get string method
                     System.out.println(contactList.getContactItemByName(existingName));} //calling the arraylist aka "contactList" to use the method getContactItemByName then passing in existingName as the argument
@@ -147,10 +117,7 @@ public class ContactsApplication {
                     Toolkit.getDefaultToolkit().beep();
                     contactList.removeContactItem(nameToDelete); // calling array contactList then accessing the method .removeContactItem and passing ^nameToDelete as the argument
 //                ContactListGateway.writeToFile(contactList1);
-
-
                     System.out.println(nameToDelete +"" +art3);} /// printing out terminated
-
                 case 5 -> {
                     Toolkit.getDefaultToolkit().beep();
                     System.out.println(art4);
@@ -159,26 +126,14 @@ public class ContactsApplication {
                     return; // breaks out the loop
                 }
                 case 6 -> menuDisply();
-
             }
-
         } while (keepSearching);/// endless loop because the boolean keepSearching is set to true;
         //save to file here contactList
-
-
-
-
 //        ContactListGateway.writeToFile(contactList);
 //        ContactList list = ContactListGateway.readFromFile();
 //        list.printItems();
 //        System.out.println(list.toStringList());
-
-
     }
-
-
-
-
     private static void menuDisply() {
         System.out.println("1 - View contacts.");
         System.out.println("2 - Add a new contact");
@@ -187,11 +142,5 @@ public class ContactsApplication {
         System.out.println("5 -  Exit");
         System.out.println("6 -  Reshow Menu");
     }
-
-
-
-
-
-
 }
 
