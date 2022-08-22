@@ -31,11 +31,10 @@ public class Input {
             Long userInput = Long.valueOf(getString(""));
             return userInput;
         } catch (NumberFormatException e) {
-            System.out.println("Invalid input");
+            System.out.println("Invalid input please try again");
             System.out.println(e.getMessage());
         }
 //        }
         return getInt(prompt);
     }
 }
-
