@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 public class ContactListGateway {
@@ -24,15 +25,17 @@ public class ContactListGateway {
     }
 
 
-    public static void writeItemStringsToFilePath(Path filePath, List<String> itemStrings) {
+    private static void writeItemStringsToFilePath(Path filePath, List<String> itemStrings) {
         try {
             Files.write(filePath, itemStrings);
+//            Files.write(filePath, itemStrings, StandardOpenOption.APPEND);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static <ContactItem> ContactList readFromFile() {
+    public static ContactList readFromFile() {
         ContactList list = new ContactList();
 
         // 1. make a path object
@@ -45,13 +48,36 @@ public class ContactListGateway {
         // 2. read item strings from file
         List<String> itemStrings = readItemStringsFromFilePath(filePath);
 
-        // 3. make items from the items strings and put them in the groceryList
+        // 3. make items from the items strings and put them in the contactList
         for(String itemString : itemStrings) {
-            Contact_Item item =  Contact_Item.createFromString(itemString);
-            list.addContactItem((Contact_Item) item);
+            list.addContactItem(Contact_Item.createFromString(itemString));
         }
         return list;
     }
+
+//    public static <ContactItem> ContactList readFromFileNoDuplicate() {
+//        ContactList list = new ContactList();
+//
+//        // 1. make a path object
+//        Path filePath = getFilePath();
+//        if(filePath == null) {
+//            System.out.println("Filepath could not be created. Cannot load.");
+//            return list;
+//        }
+//
+//        // 2. read item strings from file
+//        List<String> itemStrings = readItemStringsFromFilePath(filePath);
+//
+//        // 3. make items from the items strings and put them in the contactList
+//        for(String itemString : itemStrings) {
+//            Contact_Item item =  Contact_Item.createFromString(itemString);
+//            if(itemStrings.contains(itemString)){
+//                System.out.println("This contact already exists!");
+//            }
+//            list.addContactItem(item);
+//        }
+//        return list;
+//    }
 
     private static List<String> readItemStringsFromFilePath(Path filePath) {
         try {

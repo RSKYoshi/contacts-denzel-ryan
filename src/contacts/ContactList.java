@@ -1,16 +1,12 @@
 package contacts;
 
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ContactList {
-    private ArrayList<Contact_Item> contactItems;
-
-    public ContactList() {
-        contactItems = new ArrayList<>();
-    }
-
+    private final ArrayList<Contact_Item> contactItems = new ArrayList<>();
 
 
     ///add method here
@@ -22,9 +18,13 @@ public class ContactList {
         System.out.println("Contact List  : Phone number");
         System.out.print(" ____ ____ ____ ____ ____ ____ \n"
                );
-
         for(Contact_Item item : contactItems) {
-            System.out.println("\t" + item);
+//            if(contactItems.contains(item)){
+//                System.out.println("This contact already exists");
+//                return;
+//            } else {
+                System.out.println("\t" + item);
+//            }
         }
     }
 
@@ -76,17 +76,15 @@ public class ContactList {
         System.out.println("Could not find contact item: " + itemName);
         return null;
     }
-
-
-
-
     public List<String> toStringList() {
         List<String> itemStrings = new ArrayList<>();
 
         for(Contact_Item item : contactItems) {
+//            if(contactItems.contains(item)){
+//                System.out.println("This contact already exists!");
+//            }
             itemStrings.add(item.toString());
         }
         return itemStrings;
     }
-
 }

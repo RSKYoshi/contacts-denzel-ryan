@@ -6,6 +6,8 @@ public class ContactsApplication {
     public static final String ANSI_PURPLE = "\u001B[35m"; //colors for the console
     public static final String ANSI_GREEN = "\u001B[32m";
     private static ContactList contactList = ContactListGateway.readFromFile();
+//    private static ContactList contactList = ContactListGateway.readFromFileNoDuplicate();
+
 //    private static ContactList contactList = ContactListGateway.writeItemStringsToFilePath();
 
     public static void main(String[] args) {
@@ -77,7 +79,7 @@ public class ContactsApplication {
           ▀████████▀▀███████▀
         """;
         /// default  generic people on the list
-        ContactList contactList = new ContactList(); // array list
+//        ContactList contactList = new ContactList(); // array list
 //        Contact_Item tom = new Contact_Item("Tom", "2108879341"); // creating people for the array list
 //        Contact_Item ryan = new Contact_Item("Ryan", "2101234567");; // creating people for the array list
 //        contactList.addContactItem(tom); //adding those people to the array list
@@ -96,6 +98,7 @@ public class ContactsApplication {
                     Toolkit.getDefaultToolkit().beep();
                     contactList.printItems(); // print the current array list that we set up^^^^ using the printItems() method
                     ContactListGateway.readFromFile();
+//                    ContactListGateway.readFromFileNoDuplicate();
                 }
                 case 2->
                 {
@@ -123,6 +126,7 @@ public class ContactsApplication {
                     System.out.println(art4);
                     System.out.println(art5);
                     ContactListGateway.writeToFile(contactList);
+
                     return; // breaks out the loop
                 }
                 case 6 -> menuDisply();
