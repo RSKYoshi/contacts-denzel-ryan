@@ -92,7 +92,7 @@ public class ContactsApplication {
             Input input = new Input();
             contactList = contactList;
 
-            int choice = input.getInt("Please enter a Selection: ");
+            int choice = Math.toIntExact(input.getInt("Please enter a Selection: "));
             switch (choice) {
                 case 1 -> {
                     Toolkit.getDefaultToolkit().beep();
@@ -105,6 +105,12 @@ public class ContactsApplication {
                     Toolkit.getDefaultToolkit().beep();
                     String newPersonName = input.getString("Enter contact name: ");  // getting user string input
                     String newPersonNumber = String.valueOf(input.getInt("Enter contact number: "));  // getting user input.getInt to get the integer that the user puts in String.valueOf method converts that  number to a string
+
+
+//                    ContactListGateway.formatNumber(newPersonNumber);
+
+
+
                     Contact_Item newContact = new Contact_Item(newPersonName, newPersonNumber ); //making new  contact item to pass the  variables up there ^^^
                     contactList.addContactItem(newContact); //setting the array list to add the new contact item
 //                    ContactListGateway.writeToFile(contactList);

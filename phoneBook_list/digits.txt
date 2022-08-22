@@ -1,3 +1,0 @@
-bob : 123
-frank : 1234
-denzel : 1234
