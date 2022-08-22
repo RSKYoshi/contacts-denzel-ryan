@@ -47,6 +47,9 @@ public class Contact_Item extends ContactsApplication {
 // Picture art for ContactApplications
     public static void art(){
         String art = ANSI_PURPLE+ """
+                
+                
+                ----          ----  ------- ----       ------    ----    ----  ---- ---------
                 \\   \\  /  \\  /   / |   ____||  |      /      | /  __  \\  |   \\/   | |   ____|
                  \\   \\/    \\/   /  |  |__   |  |     |  ,----'|  |  |  | |  \\  /  | |  |__  \s
                   \\            /   |   __|  |  |     |  |     |  |  |  | |  |\\/|  | |   __| \s
