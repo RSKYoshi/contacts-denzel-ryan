@@ -24,11 +24,11 @@ public class Input {
     }
 
 
-    public int getInt(String prompt) {
+    public Long getInt(String prompt) {
 //        while (true) {
         System.out.print(prompt);
         try {
-            int userInput = Integer.valueOf(getString(""));
+            Long userInput = Long.valueOf(getString(""));
             return userInput;
         } catch (NumberFormatException e) {
             System.out.println("Invalid input");

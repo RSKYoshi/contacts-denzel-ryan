@@ -4,10 +4,25 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContactListGateway {
+
+//    Input input = new Input();
+    //how to pass newPersonNumber here  from contacts application class???
+//    String newPersonNumber = input.getInt();
+//    ContactsApplication.newPersonNumber;
+
+//    public static String[] formatNumber(String[] newPersonNumber) {
+//        ArrayList<String> newPersonNumber = new ArrayList<String>(10);
+////        System.out.println("this works!");
+//        //this method will alter the user phone number with a dash for readability
+//        //loop over the length and based on the length, add a dash after index 3
+//        newPersonNumber.add(3,"-");
+//        return newPersonNumber;
+//    }
+
 
     public static void writeToFile(ContactList contactList) {
         // 1. make a path object

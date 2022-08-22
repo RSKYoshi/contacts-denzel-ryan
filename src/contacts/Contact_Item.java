@@ -7,7 +7,15 @@ public class Contact_Item {
 
     public Contact_Item(String name, String phoneNumbers) {
         this.name = name;
-        this.phoneNumbers = phoneNumbers;
+        this.phoneNumbers = formatPhoneNumber(phoneNumbers);
+//        this.phoneNumbers = phoneNumbers;
+
+    }
+
+    private String formatPhoneNumber(String phoneNumbers) {
+//        TODO:  add if else method here to check input number and add "-" at index 3,4
+        phoneNumbers.add(3,"-");
+        return phoneNumbers;
     }
 
     public static Contact_Item createFromString(String contactString) {
@@ -23,6 +31,8 @@ public class Contact_Item {
     public String getName() {
         return name;
     }
+
+
 
 //    public void setName(String name) {
 //        this.name = name;
