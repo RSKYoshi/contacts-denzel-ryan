@@ -5,13 +5,9 @@ public class ContactsApplication  {
     public static final String ANSI_PURPLE = "\u001B[35m"; //colors for the console
     public static final String ANSI_GREEN = "\u001B[32m";
     private static ContactList contactList = ContactListGateway.readFromFile();
-
     public static void main(String[] args) {
-
         boolean keepSearching = true;
-
         Contact_Item.art();// welcome
-
         menuDisply();
         do {
             Input input = new Input();
@@ -41,14 +37,11 @@ public class ContactsApplication  {
         System.out.println("5 -  Exit");
         System.out.println("6 -  Reshow Menu");
     }
-
     private static void showList() {
         Toolkit.getDefaultToolkit().beep();
         contactList.printItems(); // print the current array list that we set up^^^^ using the printItems() method
         ContactListGateway.readFromFile();
-
     }
-
     private static void addPerson() {
         Input input = new Input();
         Toolkit.getDefaultToolkit().beep();
@@ -58,7 +51,6 @@ public class ContactsApplication  {
         contactList.addContactItem(newContact); //setting the array list to add the new contact item
         ContactListGateway.writeToFile(contactList);
         Contact_Item.art2();
-
     }
     private static void searchPerson() {
         Input input = new Input();
@@ -71,8 +63,8 @@ public class ContactsApplication  {
         String nameToDelete = input.getString("What contact would you like to delete? ");//captures user input ^ using input.getString^ then set the nameToDelete
         Toolkit.getDefaultToolkit().beep();
         contactList.removeContactItem(nameToDelete); // calling array contactList then accessing the method .removeContactItem and passing ^nameToDelete as the argument
+        ContactListGateway.writeToFile(contactList);
         System.out.println(nameToDelete +""+  Contact_Item.art3());} /// printing out terminated
-
     private static void exit(){
         Toolkit.getDefaultToolkit().beep();
         Contact_Item.art4();
