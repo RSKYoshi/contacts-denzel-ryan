@@ -68,7 +68,7 @@ public class ContactsApplication  {
     private static void exit(){
         Toolkit.getDefaultToolkit().beep();
         Contact_Item.art4();
-        Contact_Item.art5();
+//        Contact_Item.art5();
         ContactListGateway.writeToFile(contactList);
         return; // breaks out the loop
     }
