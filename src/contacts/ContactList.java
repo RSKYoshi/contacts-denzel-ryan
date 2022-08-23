@@ -1,6 +1,4 @@
 package contacts;
-
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,11 +6,11 @@ import java.util.List;
 public class ContactList {
     private final ArrayList<Contact_Item> contactItems = new ArrayList<>();
 
-
     ///add method here
     public void addContactItem(Contact_Item item) {
         contactItems.add(item);
     }
+
 
     public void printItems() {
         System.out.println("Contact List  : Phone number");
@@ -29,10 +27,7 @@ public class ContactList {
     }
 
 
-
-
         //remove method here
-
     public void removeContactItem(String contactName) {
         // 1. find the index of the contact item with itemName
         int index = getIndexOfItemByName(contactName);
@@ -56,15 +51,6 @@ public class ContactList {
         return index;
     }
 
-//    public void setItemQuantity(String itemName, int quantity) {
-//        int index = getIndexOfItemByName(itemName);
-//
-//        // 2. remove the item in the grocery list at that index
-//        if(index > -1) {
-//            GroceryItem item = groceryItems.get(index);
-//            item.setQuantity(quantity);
-//        }
-//    }
 
     public Contact_Item getContactItemByName(String itemName) {
         int index = getIndexOfItemByName(itemName);
@@ -76,13 +62,11 @@ public class ContactList {
         System.out.println("Could not find contact item: " + itemName);
         return null;
     }
+
+
     public List<String> toStringList() {
         List<String> itemStrings = new ArrayList<>();
-
         for(Contact_Item item : contactItems) {
-//            if(contactItems.contains(item)){
-//                System.out.println("This contact already exists!");
-//            }
             itemStrings.add(item.toString());
         }
         return itemStrings;

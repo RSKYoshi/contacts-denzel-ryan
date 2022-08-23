@@ -11,6 +11,7 @@ public class Input {
         return scanner.nextLine();
     }
 
+
     public void clear() {
         scanner.nextLine();
     }

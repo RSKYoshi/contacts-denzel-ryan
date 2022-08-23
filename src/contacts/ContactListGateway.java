@@ -4,26 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ContactListGateway {
-
-//    Input input = new Input();
-    //how to pass newPersonNumber here  from contacts application class???
-//    String newPersonNumber = input.getInt();
-//    ContactsApplication.newPersonNumber;
-
-//    public static String[] formatNumber(String[] newPersonNumber) {
-//        ArrayList<String> newPersonNumber = new ArrayList<String>(10);
-////        System.out.println("this works!");
-//        //this method will alter the user phone number with a dash for readability
-//        //loop over the length and based on the length, add a dash after index 3
-//        newPersonNumber.add(3,"-");
-//        return newPersonNumber;
-//    }
-
-
     public static void writeToFile(ContactList contactList) {
         // 1. make a path object
         Path filePath = getFilePath();
@@ -31,14 +14,12 @@ public class ContactListGateway {
             System.out.println("Filepath could not be created. Cannot save.");
             return;
         }
-
         // 2. make a temporary list of strings that are the contact items and write those to the file
         List<String> itemStrings = contactList.toStringList();
 
         // 3. use Files.write to send the data to the file
         writeItemStringsToFilePath(filePath, itemStrings);
     }
-
 
     private static void writeItemStringsToFilePath(Path filePath, List<String> itemStrings) {
         try {
@@ -69,30 +50,6 @@ public class ContactListGateway {
         }
         return list;
     }
-
-//    public static <ContactItem> ContactList readFromFileNoDuplicate() {
-//        ContactList list = new ContactList();
-//
-//        // 1. make a path object
-//        Path filePath = getFilePath();
-//        if(filePath == null) {
-//            System.out.println("Filepath could not be created. Cannot load.");
-//            return list;
-//        }
-//
-//        // 2. read item strings from file
-//        List<String> itemStrings = readItemStringsFromFilePath(filePath);
-//
-//        // 3. make items from the items strings and put them in the contactList
-//        for(String itemString : itemStrings) {
-//            Contact_Item item =  Contact_Item.createFromString(itemString);
-//            if(itemStrings.contains(itemString)){
-//                System.out.println("This contact already exists!");
-//            }
-//            list.addContactItem(item);
-//        }
-//        return list;
-//    }
 
     private static List<String> readItemStringsFromFilePath(Path filePath) {
         try {
@@ -125,6 +82,5 @@ public class ContactListGateway {
         }
         return null;
     }
-
 }
 
